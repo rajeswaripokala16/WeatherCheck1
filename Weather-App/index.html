@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather Finder</h1>
+            <p>Get current weather information for any city worldwide</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." autocomplete="off">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="weather-container" id="weatherContainer">
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading weather data...</p>
+            </div>
+
+            <div class="weather-card" id="weatherCard">
+                <div class="weather-header">
+                    <h2 id="cityName"></h2>
+                    <p id="currentDate"></p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temperature">
+                        <span id="temp"></span>
+                        <div class="temp-unit">
+                            <button id="celsiusBtn" class="active">°C</button>
+                            <button id="fahrenheitBtn">°F</button>
+                        </div>
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="Weather Icon">
+                        <p id="weatherDescription"></p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Feels like</span>
+                        <span id="feelsLike"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span>Humidity</span>
+                        <span id="humidity"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Wind Speed</span>
+                        <span id="windSpeed"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span>Pressure</span>
+                        <span id="pressure"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-low-vision"></i>
+                        <span>Visibility</span>
+                        <span id="visibility"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <span>UV Index</span>
+                        <span id="uvIndex"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Oops! Something went wrong</h3>
+                <p id="errorText"></p>
+                <button id="retryBtn">Try Again</button>
+            </div>
+        </div>
+
+        <div class="api-info">
+            <p><strong>Note:</strong> To use this weather app, you need to:</p>
+            <ol>
+                <li>Get a free API key from <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></li>
+                <li>Replace 'YOUR_API_KEY' in the script.js file with your actual API key</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
